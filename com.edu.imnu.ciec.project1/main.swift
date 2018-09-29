@@ -8,5 +8,30 @@
 
 import Foundation
 
-print("Hello, World!")
+var i = 0
+var j = 0
+var temp = 0
+var someArray = [Int]()
 
+for i in 0...99
+{
+    someArray.append(i+1)
+}
+
+for i in 0...98
+{
+    for j in 0...98-i
+    {
+        if someArray[j+1]>someArray[j]
+        {
+            temp = someArray[j+1]
+            someArray[j+1] = someArray[j]
+            someArray[j] = temp
+        }
+    }
+}
+
+for i in 0...99
+{
+    print("\(someArray[i])")
+}
